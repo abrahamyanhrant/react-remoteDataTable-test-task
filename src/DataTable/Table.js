@@ -4,7 +4,6 @@ import Pagination from "./Pagination";
 import {useHistory, useLocation, Link} from "react-router-dom";
 import filterFactory, {textFilter} from 'react-bootstrap-table2-filter';
 import {fetchProducts} from "../redux/actions";
-import RepoLink from "../Link";
 import "./table.css";
 
 
@@ -50,7 +49,7 @@ const Table = () => {
         {
             dataField: 'html_url',
             text: 'Link To Repo',
-            formatter: (cell) => <RepoLink link={cell}/>,
+            formatter: (cell) => <a href={cell} target="_blank" rel="noreferrer">{cell}</a>,
             style: () => {
                 return {
                     verticalAlign: "middle",
